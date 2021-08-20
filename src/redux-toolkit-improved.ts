@@ -51,6 +51,7 @@ const todosSlice = createSlice({
         state.push(payload);
       },
       // reducer needs to be pure, just sticking to one operation! But if we create random ID inside reducer, that is an anti-pattern. So we are using `prepare` here.
+
       prepare: ({ desc }: { desc: string }) => ({
         payload: {
           id: uuid(),
@@ -152,6 +153,7 @@ const reducer = {
   counter: counterSlice.reducer,
 };
 
+// TODO: instead of spread operator, use prepend? or append or sth.
 // getDefaultMiddleware is necessary to tell Redux that we want to use the default middlewares.
 const middleware = [...getDefaultMiddleware(), logger];
 // comparison: devtool already connected so no need to declare.
