@@ -28,7 +28,7 @@ import { selectTodoActionCreator } from "../features/selectedTodoSlice/selectedT
 import { State } from "../type";
 import "./App.css";
 
-const App = function() {
+const App = function () {
   const dispatch = useAppDispatch();
   const todos = useAppSelector((state: State) => state.todos);
   const selectedTodoId = useAppSelector((state: State) => state.selectedTodo);
